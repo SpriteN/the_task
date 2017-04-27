@@ -11,14 +11,23 @@
         var vselection =$(".subkategorija");
 
         var x = 1; //initlal text box count
-        $(selection).change(function(e){
+        $(vselection).click(function(e){
           $(vselection).empty();
           if(($(selection).val())=="1")
-          $(vselection).append('<option value="1">Iesko</option><option value="2">Siulo</option>');
+          $(vselection).append('<option value="1">Ieško</option><option value="2">Siūlo</option>');
           if(($(selection).val())=="2")
           $(vselection).append('<option value="3">Butai</option><option value="4">Namai</option>');
           if(($(selection).val())=="3")
-          $(vselection).append('<option value="5">Nesiojami</option><option value="6">Staliniai</option>');
+          $(vselection).append('<option value="5">Nešiojami</option><option value="6">Staliniai</option>');
+        });
+        $(selection).change(function(e){
+          $(vselection).empty();
+          if(($(selection).val())=="1")
+          $(vselection).append('<option value="1">Ieško</option><option value="2">Siūlo</option>');
+          if(($(selection).val())=="2")
+          $(vselection).append('<option value="3">Butai</option><option value="4">Namai</option>');
+          if(($(selection).val())=="3")
+          $(vselection).append('<option value="5">Nešiojami</option><option value="6">Staliniai</option>');
         });
 
 
@@ -48,7 +57,7 @@
      </div>
      <div class="input-group">
        <label>Komentaras:</label><input type="textarea" name="komentaras" value="" size="20" maxlength="100">
-        <input type="submit" name="" value="Ideti">
+        <input type="submit" name="" value="Įdėti">
       </div>
 
 </form>
