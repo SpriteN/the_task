@@ -7,7 +7,12 @@
 <?php foreach ($posts as $post) : ?>
   <tr>
     <th><?php echo $post['pavadinimas']; ?></th>
-    <th><?php echo $post['kategorija']; ?></th>
+    <th><?php
+      $query = $this->db->query("SELECT * FROM kategorijos WHERE kat_id = ".$post['kategorija']);
+      foreach ($query->result() as $row){
+        echo $row->kat_pav;
+      } ?>
+   </th>
     <th><?php echo $post['subkategorija']; ?></th>
     <th><a href="/posts/edit/<?php echo $post['id']; ?>"><button type="button" class="btn btn-default">
   <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Redaguoti
