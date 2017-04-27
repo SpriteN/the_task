@@ -21,8 +21,8 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="<?php echo base_url(); ?>">Home</a></li>
-            <li><a href="<?php echo base_url(); ?>about">about</a></li>
+            <li><a href="<?php echo base_url(); ?>">Pagrindinis</a></li>
+            <li><a href="<?php echo base_url(); ?>posts">Skelbimai</a></li>
 
           </ul>
         </div><!-- /.navbar-collapse -->
