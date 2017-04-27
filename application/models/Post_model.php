@@ -13,13 +13,11 @@
     }
 
     public function create_post(){
-        $kat_st=1;
-        if($this->input->post('kat_sel') === 'darbas') $kat_st = 1;
-        else if($this->input->post('kat_sel') === 'nekilnojamas_turtas') $kat_st = 2;
-        else if($this->input->post('kat_sel') === 'kompiuteriai') $kat_st = 3;
       $data = array(
         'pavadinimas' => $this->input->post('pavadinimas'),
-        'kategorija' => $kat_st
+        'kategorija' => $this->input->post('kat_sel'),
+        'subkategorija' => $this->input->post('sub_sel'),
+        'komentaras' => $this->input->post('komentaras'),
 
       );
 
@@ -27,13 +25,11 @@
     }
 
     public function update_post(){
-        $kat_st=1;
-        if($this->input->post('kat_sel') === 'darbas') $kat_st = 1;
-        else if($this->input->post('kat_sel') === 'nekilnojamas_turtas') $kat_st = 2;
-        else if($this->input->post('kat_sel') === 'kompiuteriai') $kat_st = 3;
-        $data = array(
-          'pavadinimas' => $this->input->post('pavadinimas'),
-          'kategorija' => $kat_st
+      $data = array(
+        'pavadinimas' => $this->input->post('pavadinimas'),
+        'kategorija' => $this->input->post('kat_sel'),
+        'subkategorija' => $this->input->post('sub_sel'),
+        'komentaras' => $this->input->post('komentaras'),
 
         );
         $this->db->where('id', $this->input->post('id'));

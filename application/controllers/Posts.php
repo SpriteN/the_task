@@ -30,7 +30,6 @@
 
 
     public function edit($id){
-      echo $id;
       $data['post'] = $this->post_model->get_posts($id);
       if(empty($data['post'])){
         show_404();

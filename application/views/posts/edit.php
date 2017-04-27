@@ -13,12 +13,12 @@
         var x = 1; //initlal text box count
         $(selection).change(function(e){
           $(vselection).empty();
-          if(($(selection).val())=="darbas")
-          $(vselection).append('<option value="iesko">Iesko</option><option value="siulo">Siulo</option>');
-          if(($(selection).val())=="nekilnojamas_turtas")
-          $(vselection).append('<option value="butai">Butai</option><option value="namai">Namai</option>');
-          if(($(selection).val())=="kompiuteriai")
-          $(vselection).append('<option value="nesiojami">Nesiojami</option><option value="staliniai">Staliniai</option>');
+          if(($(selection).val())=="1")
+          $(vselection).append('<option value="1">Iesko</option><option value="2">Siulo</option>');
+          if(($(selection).val())=="2")
+          $(vselection).append('<option value="3">Butai</option><option value="4">Namai</option>');
+          if(($(selection).val())=="3")
+          $(vselection).append('<option value="5">Nesiojami</option><option value="6">Staliniai</option>');
         });
 
 
@@ -36,15 +36,20 @@
        <label>Pavadinimas: </label><input type="text" name="pavadinimas" value="<?php echo $post['pavadinimas']; ?>">
      </div>
      <div class="input-group">
-       <label>Kategorija:</label><select class="kategorija" name="kat_sel" value="<?php echo $post['kategorija']; ?>">
-         <option value="darbas">Darbas</option>
-         <option value="nekilnojamas_turtas">Nekilnojamas turtas</option>
-         <option value="kompiuteriai">Kompiuteriai</option>
+       <label>Kategorija:</label><select class="kategorija" name="kat_sel" id="kat_sel">
+         <option value="1">Darbas</option>
+         <option value="2">Nekilnojamas turtas</option>
+         <option value="3">Kompiuteriai</option>
        </select>
      </div>
      <div class="input-group">
-       <label>Subkategorija:</label><select class="subkategorija" name="sub_sel" value="<?php echo $post['subkategorija']; ?>">
-         <option value="<?php echo $post['subkategorija']; ?>"></option>
+       <label>Subkategorija:</label><select class="subkategorija" name="sub_sel" id="sub_sel">
+         <option value="1">Iesko</option>
+         <option value="2">Siulo</option>
+         <option value="3">Butai</option>
+         <option value="4">Namai</option>
+         <option value="5">Nesiojami</option>
+         <option value="6">Staliniai</option>
        </select>
      </div>
      <div class="input-group">
@@ -53,3 +58,9 @@
       </div>
 
 </form>
+
+
+<script type="text/javascript">
+        document.getElementById('kat_sel').selectedIndex = <?php echo $post['kategorija']; ?>-1;
+        document.getElementById('sub_sel').selectedIndex = <?php echo $post['subkategorija']; ?>-1;
+</script>
