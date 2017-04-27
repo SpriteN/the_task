@@ -28,6 +28,26 @@
       }
     }
 
+
+    public function edit($id){
+      echo $id;
+      $data['post'] = $this->post_model->get_posts($id);
+      if(empty($data['post'])){
+        show_404();
+      }
+
+      $data['title'] = 'edit post';
+      $this->load->view('templates/header');
+      $this->load->view('posts/edit',$data);
+      $this->load->view('templates/footer');
+    }
+
+    public function update(){
+      //echo $id;
+      $this->post_model->update_post();
+      redirect('posts');
+    }
+
   }
 
  ?>
